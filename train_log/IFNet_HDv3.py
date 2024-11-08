@@ -78,7 +78,7 @@ class IFNet(nn.Module):
         # self.contextnet = Contextnet()
         # self.unet = Unet()
 
-    def forward(self, x, scale_list=[4, 2, 1], training=False):
+    def forward(self, x, scale_list=[4, 2, 1], training=False, **ignore_kwargs):
         if training == False:
             channel = x.shape[1] // 2
             img0 = x[:, :channel]
